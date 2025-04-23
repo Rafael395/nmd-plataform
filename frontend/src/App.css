@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.questao {
+  margin: 15px 0;
+  padding: 10px;
+  background: #282c34;
+  border-radius: 5px;
+}
+
+select {
+  padding: 8px;
+  margin-left: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resultado {
+  background: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+}
