@@ -1,0 +1,276 @@
+:root {
+    --black: #080808;
+    --dark-gray: #1a1a1a;
+    --medium-gray: #3d3d3d;
+    --light-gray: #e8e8e8;
+    --white: #ffffff;
+    --transparent-dark: rgba(10, 10, 10, 0.85);
+    --transparent-light: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Estilos Base */
+  .home-container {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Seção Hero */
+  .hero-section {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 180px 8% 160px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 75% 30%, var(--transparent-light) 0%, transparent 60%),
+      linear-gradient(to bottom, var(--transparent-dark) 0%, transparent 100%);
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .logo-marker {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -1px;
+  }
+  
+  .highlight {
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    opacity: 0.7;
+  }
+  
+  .subtitle {
+    font-size: 1.35rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  
+  .bold {
+    font-weight: 600;
+    color: var(--white);
+  }
+  
+  /* Seções Genéricas */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  
+  .section-header p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+  
+  /* Seção Diferenciais */
+  .differentials-section {
+    padding: 140px 8%;
+    background-color: var(--white);
+  }
+  
+  .value-props {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .prop-card {
+    background-color: var(--white);
+    padding: 50px 40px;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--light-gray);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+  }
+  
+  .prop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border-color: var(--medium-gray);
+  }
+  
+  .card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 28px;
+    color: var(--black);
+    opacity: 0.9;
+  }
+  
+  .prop-card h3 {
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  
+  .prop-card p {
+    color: var(--medium-gray);
+    line-height: 1.8;
+    font-size: 1.08rem;
+  }
+  
+  /* Seção de Caso */
+  .case-section {
+    padding: 160px 8%;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    position: relative;
+  }
+  
+  .case-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(135deg, rgba(0,0,0,0.7) 0%, transparent 100%),
+      url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwMDAiLz48cGF0aCBkPSJNMCAzMEg2ME0zMCAwVjYwIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==');
+    opacity: 0.15;
+  }
+  
+  .case-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .case-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .case-text h2 {
+    font-size: 2.3rem;
+    color: var(--white);
+    margin-bottom: 30px;
+  }
+  
+  .case-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 40px;
+    font-style: italic;
+    position: relative;
+  }
+  
+  .case-details {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+  }
+  
+  .metric {
+    text-align: center;
+  }
+  
+  .metric-value {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  
+  .metric-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+  }
+  
+  /* Seção Recursos */
+  .resources-section {
+    padding: 140px 8%;
+    background-color: var(--white);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature {
+    padding: 40px;
+    background-color: rgba(0,0,0,0.02);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--light-gray);
+  }
+  
+  .feature:hover {
+    background-color: var(--white);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border-color: var(--medium-gray);
+  }
+  
+  .feature h3 {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  
+  .feature p {
+    color: var(--medium-gray);
+    line-height: 1.7;
+  }
