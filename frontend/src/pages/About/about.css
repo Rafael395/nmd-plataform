@@ -1,0 +1,254 @@
+/* Estrutura Principal */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Ajuste para header fixo (80px de altura) */
+.about-page {
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Main Content */
+.about-main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+/* Team Section */
+.team-section {
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.team-card.founder {
+  border-top: 4px solid #4ca1af;
+}
+
+.member-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+.founder-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #4ca1af;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.member-info {
+  padding: 1.5rem;
+}
+
+.member-name {
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.member-role {
+  color: #4ca1af;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.member-bio {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Mission Section */
+.mission-section {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.mission-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-title {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.mission-text {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.mission-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  min-width: 120px;
+  border-top: 3px solid #4ca1af;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 300px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .about-main-content {
+    padding: 0 1.5rem 3rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .mission-stats {
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    min-width: 100px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* Ajuste final para o footer (60px de altura) */
+.about-page {
+  padding-bottom: 60px;
+}
