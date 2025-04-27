@@ -1,4 +1,4 @@
-import React from 'react'; // Mantenha para compatibilidade
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
@@ -15,10 +15,16 @@ export default function App() {
       <main className="app-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/contato" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          
+          {/* Optional: Redirect for old '/sobre' route */}
+          <Route path="/sobre" element={<About />} />
+          
+          {/* Optional: 404 Page */}
+          <Route path="*" element={<div>Página não encontrada</div>} />
         </Routes>
       </main>
       <Footer />

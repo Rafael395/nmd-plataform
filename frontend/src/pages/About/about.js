@@ -41,75 +41,81 @@ const About = () => {
     }
   ];
 
+  const values = [
+    {
+      title: "Inovação Contínua",
+      description: "Pesquisa e desenvolvimento constantes para soluções de ponta"
+    },
+    {
+      title: "Transparência",
+      description: "Processos claros e algoritmos auditáveis"
+    },
+    {
+      title: "Ética em Dados",
+      description: "Respeito absoluto à privacidade e legislação"
+    }
+  ];
+
   return (
     <div className="about-page">
-      {/* Hero Banner */}
+      {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-content">
           <h1>Nossa Equipe</h1>
-          <p className="hero-subtitle">Especialistas em tecnologia para gestão de talentos</p>
+          <p>Especialistas em tecnologia para gestão de talentos</p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <main className="about-main-content">
-        {/* Team Section */}
-        <section className="team-section">
-          <div className="section-header">
-            <h2>Conheça o Time</h2>
-            <p className="section-subtitle">Profissionais dedicados à excelência em People Analytics</p>
-          </div>
+      {/* Team Section */}
+      <section className="team-section">
+        <div className="section-header">
+          <h2>Conheça o Time</h2>
+          <p>Profissionais dedicados à excelência em People Analytics</p>
+        </div>
+        
+        <div className="team-grid">
+          {team.map((member) => (
+            <div 
+              key={member.id}
+              className={`team-card ${member.founder ? 'founder' : ''}`}
+            >
+              <div className="member-image">
+                <img 
+                  src={member.img} 
+                  alt={member.name}
+                  onError={(e) => {
+                    e.target.src = '/images/placeholder-user.png';
+                  }}
+                />
+                {member.founder && <span className="founder-badge">Fundador</span>}
+              </div>
+              <h3>{member.name}</h3>
+              <p className="role">{member.role}</p>
+              <p className="bio">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="team-grid">
-            {team.map((member) => (
-              <div 
-                key={member.id}
-                className={`team-card ${member.founder ? 'founder' : ''}`}
-              >
-                <div className="member-image-container">
-                  <img 
-                    src={member.img} 
-                    alt={member.name}
-                    className="member-image"
-                    loading="lazy"
-                  />
-                  {member.founder && <span className="founder-badge">Fundador</span>}
-                </div>
-                <div className="member-info">
-                  <h3 className="member-name">{member.name}</h3>
-                  <p className="member-role">{member.role}</p>
-                  <p className="member-bio">{member.bio}</p>
-                </div>
+      {/* Mission Section */}
+      <section className="mission-section">
+        <div className="mission-content">
+          <h2>Nossa Missão</h2>
+          <p>
+            Desenvolver soluções tecnológicas que simplificam processos e conectam pessoas, 
+            com código de qualidade e design centrado no usuário.
+          </p>
+          
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <div key={index} className="value-card">
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Mission Section */}
-        <section className="mission-section">
-          <div className="mission-content">
-            <h2 className="mission-title">Nossa Tecnologia</h2>
-            <p className="mission-text">
-              Combinamos inteligência artificial com psicometria avançada para oferecer a plataforma
-              mais precisa do mercado em avaliação e matching de talentos.
-            </p>
-            <div className="mission-stats">
-              <div className="stat-card">
-                <span className="stat-number">+89%</span>
-                <span className="stat-label">Precisão</span>
-              </div>
-              <div className="stat-card">
-                <span className="stat-number">5.2x</span>
-                <span className="stat-label">ROI</span>
-              </div>
-              <div className="stat-card">
-                <span className="stat-number">24/7</span>
-                <span className="stat-label">Disponibilidade</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,0 +1,243 @@
+/* Estrutura Principal */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Hero Section */
+  .blog-hero {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .blog-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-hero .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* Blog Posts Section */
+  .blog-posts-section {
+    margin-bottom: 80px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+  }
+  
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .post-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .post-card:hover .post-image {
+    transform: scale(1.05);
+  }
+  
+  .post-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4ca1af;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  
+  .post-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .post-excerpt {
+    color: #64748b;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .read-more {
+    color: #4ca1af;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #2c3e50;
+    transform: translateX(5px);
+  }
+  
+  /* Newsletter Section */
+  .newsletter-section {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-content h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+  
+  .newsletter-content p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .email-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .email-input:focus {
+    border-color: #4ca1af;
+  }
+  
+  .subscribe-button {
+    background: #4ca1af;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .subscribe-button:hover {
+    background: #3a7a8a;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .blog-hero {
+      height: 300px;
+    }
+    
+    .blog-hero h1 {
+      font-size: 2.2rem;
+    }
+    
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+    }
+    
+    .email-input {
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    
+    .subscribe-button {
+      border-radius: 4px;
+      padding: 12px;
+    }
+  }

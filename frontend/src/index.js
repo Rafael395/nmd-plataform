@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Create root once
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
+// Render application
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-reportWebVitals();
+// Optional: Performance monitoring
+if (process.env.NODE_ENV === 'production') {
+  reportWebVitals(console.log); // Or send to analytics service
+}
