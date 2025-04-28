@@ -1,21 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-// Create root once
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
+// Configuração inicial do app
+function initializeApp() {
+  const container = document.getElementById('root');
+  
+  if (!container) {
+    throw new Error(
+      "Elemento root não encontrado. Verifique se existe um elemento com ID 'root' no seu HTML."
+    );
+  }
 
-// Render application
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  const root = ReactDOM.createRoot(container);
 
-// Optional: Performance monitoring
-if (process.env.NODE_ENV === 'production') {
-  reportWebVitals(console.log); // Or send to analytics service
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+
+  // Configuração de Web Vitals apenas em produção
+  if (process.env.NODE_ENV === 'production') {
+    reportWebVitals(console.log);
+    // Ou enviar para um serviço de analytics:
+    // reportWebVitals(sendToAnalytics);
+  }
 }
+
+// Inicializa a aplicação
+initializeApp();

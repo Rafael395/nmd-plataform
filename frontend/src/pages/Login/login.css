@@ -1,0 +1,192 @@
+/* Estilos Base */
+.login-page, .register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    padding: 20px;
+  }
+  
+  .login-container, .register-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Formulários */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #4ca1af;
+    outline: none;
+  }
+  
+  /* Botões */
+  .login-button, .register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4ca1af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .login-button:hover, .register-button:hover {
+    background-color: #3a7a8a;
+  }
+  
+  /* Links e Rodapé */
+  .login-footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-footer span {
+    color: #4ca1af;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .forgot-password {
+    margin-top: 10px;
+    color: #64748b;
+    cursor: pointer;
+  }
+  
+  /* Modal de Cadastro */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .register-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .account-type-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+  }
+  
+  .account-type {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .account-type.candidate {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+  
+  .account-type.company {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .account-type:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  .close-modal {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Termos e Condições */
+  .terms-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .terms-group input {
+    margin-right: 10px;
+  }
+  
+  .terms-group label {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  
+  .terms-group a {
+    color: #4ca1af;
+    text-decoration: none;
+  }
+  
+  /* Mensagens de Erro */
+  .error-message {
+    color: #e53935;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Página de Verificação */
+  .verification-container {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .login-container, .register-container {
+      padding: 30px 20px;
+    }
+  }
