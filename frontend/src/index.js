@@ -5,33 +5,17 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-// Configuração inicial do app
-function initializeApp() {
-  const container = document.getElementById('root');
-  
-  if (!container) {
-    throw new Error(
-      "Elemento root não encontrado. Verifique se existe um elemento com ID 'root' no seu HTML."
-    );
-  }
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-  const root = ReactDOM.createRoot(container);
+root.render(
+  <React.StrictMode>
+    <BrowserRouter> {/* ← Único Router na aplicação */}
+      <App /> {/* ← App agora não contém outro Router */}
+    </BrowserRouter>
+  </React.StrictMode>
+);
 
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  );
-
-  // Configuração de Web Vitals apenas em produção
-  if (process.env.NODE_ENV === 'production') {
-    reportWebVitals(console.log);
-    // Ou enviar para um serviço de analytics:
-    // reportWebVitals(sendToAnalytics);
-  }
+// Opcional: relatório de métricas de performance
+if (process.env.NODE_ENV === 'production') {
+  reportWebVitals(console.log);
 }
-
-// Inicializa a aplicação
-initializeApp();
