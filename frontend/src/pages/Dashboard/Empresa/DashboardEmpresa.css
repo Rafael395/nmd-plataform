@@ -1,0 +1,25 @@
+/* Herda todos os estilos do DashboardCandidato.css */
+/* Podemos sobrescrever apenas o que for necessário para a dashboard de empresa */
+
+/* Exemplo de customização específica para empresa */
+.card-badge {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.highlight {
+  border-left-color: #10b981;
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.progress-circle::after {
+  border-color: #10b981;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #10b981, #059669);
+}

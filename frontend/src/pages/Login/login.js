@@ -11,26 +11,31 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    
     // Validação básica
     if (!email || !password) {
       setError('Por favor, preencha todos os campos');
       return;
     }
     
-    // Lógica de login (simulada)
-    if (email.includes('candidato')) {
-      navigate('/candidato');
-    } else if (email.includes('empresa')) {
-      navigate('/empresa');
+    // Lógica de login simulada com credenciais específicas
+    if (email === 'candidato@exemplo.com' && password === '123456') {
+      navigate('/Dashboard/DashboardCandidato');
+    } else if (email === 'empresa@exemplo.com' && password === '654321') {
+      navigate('/Dashboard/DashboardEmpresa');
     } else {
-      setError('Credenciais inválidas');
+      setError('Credenciais inválidas. Use: candidato@exemplo.com/123456 ou empresa@exemplo.com/654321');
     }
   };
 
   return (
     <div className="login-page">
-      {/* Formulário de Login */}
       <div className="login-container">
+        <div className="brand-header">
+          <h1>NMD</h1>
+          <h2>TALENT INTELLIGENCE</h2>
+        </div>
+
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
           <div className="form-group">
@@ -40,7 +45,7 @@ export default function Login() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="seu@email.com"
+              placeholder="candidato@exemplo.com ou empresa@exemplo.com"
               required
             />
           </div>
@@ -52,7 +57,7 @@ export default function Login() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Sua senha"
+              placeholder="123456 ou 654321"
               required
             />
           </div>
@@ -66,7 +71,6 @@ export default function Login() {
         
         <div className="login-footer">
           <p>Não tem uma conta? <span onClick={() => setShowRegisterModal(true)}>Cadastre-se</span></p>
-          <p className="forgot-password">Esqueceu sua senha?</p>
         </div>
       </div>
       
